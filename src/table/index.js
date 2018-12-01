@@ -1,7 +1,8 @@
 import React from "react";
 import "./table.css";
 
-const Table = () => {
+const Table = ({ lease }) => {
+  const { start_date, end_date, frequency, rent } = lease;
   return (
     <div className="Table-container">
       <table className="Table">
@@ -15,10 +16,10 @@ const Table = () => {
         </thead>
         <tbody>
           <tr>
-            <td>2018-01-01</td>
-            <td>2019-12-31</td>
-            <td>14</td>
-            <td>$220</td>
+            <td>{start_date}</td>
+            <td>{end_date}</td>
+            <td>{frequency}</td>
+            <td>${rent}</td>
           </tr>
         </tbody>
       </table>

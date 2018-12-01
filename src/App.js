@@ -29,10 +29,11 @@ class App extends Component {
   }
 
   render() {
+    const { currentLease } = this.state;
     return (
       <div className="App">
         <Header />
-        <Table />
+        <Table lease={currentLease} />
       </div>
     );
   }
