@@ -21,26 +21,30 @@ class App extends Component {
     this.setState({
       id: idInput
     });
-    this.addForm.reset();
+    // this.addForm.reset();
+    this.fetchData();
   }
 
   componentDidMount() {
-    this.fetchData();
+    // this.fetchData();
   }
 
   fetchData() {
     fetch(API + this.state.id)
       .then(resp => resp.json())
       .then(json => {
-        this.setState({
-          currentLease: json
-        });
+        this.setState(
+          {
+            currentLease: json
+          },
+          this.fetchData()
+        );
       })
       .catch(error => console.log("parsing failed"));
   }
 
   render() {
-    // const { currentLease } = this.state;
+    const { currentLease } = this.state;
     return (
       <div className="App">
         <Header />
@@ -60,7 +64,7 @@ class App extends Component {
           <button>submit</button>
         </form>
         {/* <Search /> */}
-        <Table lease={this.state.currentLease} />
+        <Table lease={currentLease} />
       </div>
     );
   }
