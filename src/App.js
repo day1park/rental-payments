@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Header from "./header";
 import Table from "./table";
+import Search from "./search";
 
 let API = "https://hiring-task-api.herokuapp.com/v1/leases/:id";
 
@@ -33,6 +34,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <Search />
         <Table lease={currentLease} />
       </div>
     );
