@@ -13,6 +13,7 @@ class App extends Component {
       currentLease: [],
       id: ":id"
     };
+    console.log(API + this.state.id);
   }
 
   idSearch(e) {
@@ -24,7 +25,7 @@ class App extends Component {
     this.addForm.reset();
   }
 
-  componentDidMount() {
+  componentDidUpdate() {
     this.fetchData();
   }
 
