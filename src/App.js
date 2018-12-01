@@ -18,27 +18,26 @@ class App extends Component {
   idSearch(e) {
     e.preventDefault();
     const idInput = this.idInput.value;
-    this.setState({
-      id: idInput
-    });
+    this.setState(
+      {
+        id: idInput
+      },
+      () => this.fetchData()
+    );
     // this.addForm.reset();
-    this.fetchData();
   }
 
-  componentDidMount() {
-    // this.fetchData();
-  }
+  // componentDidMount() {
+  //   // this.fetchData();
+  // }
 
   fetchData() {
     fetch(API + this.state.id)
       .then(resp => resp.json())
       .then(json => {
-        this.setState(
-          {
-            currentLease: json
-          },
-          this.fetchData()
-        );
+        this.setState({
+          currentLease: json
+        });
       })
       .catch(error => console.log("parsing failed"));
   }
