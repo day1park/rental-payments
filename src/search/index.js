@@ -3,9 +3,21 @@ import React from "react";
 const Search = () => {
   return (
     <div className="Search">
-      <label>ID:</label>
-      <input id="idSearch" placeholder="input ID" />
-      <button>submit</button>
+      <form
+        ref={input => (this.addForm = input)}
+        className="form-inline"
+        onSubmit={e => {
+          this.idSearch(e);
+        }}
+      >
+        <label>ID:</label>
+        <input
+          ref={input => (this.idInput = input)}
+          type="text"
+          placeholder="input ID"
+        />
+        <button>submit</button>
+      </form>
     </div>
   );
 };
