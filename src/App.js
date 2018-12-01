@@ -13,7 +13,6 @@ class App extends Component {
       currentLease: [],
       id: ":id"
     };
-    console.log(API + this.state.id);
   }
 
   idSearch(e) {
@@ -25,7 +24,7 @@ class App extends Component {
     this.addForm.reset();
   }
 
-  componentDidUpdate() {
+  componentDidMount() {
     this.fetchData();
   }
 
@@ -41,7 +40,7 @@ class App extends Component {
   }
 
   render() {
-    const { currentLease } = this.state;
+    // const { currentLease } = this.state;
     return (
       <div className="App">
         <Header />
@@ -61,7 +60,7 @@ class App extends Component {
           <button>submit</button>
         </form>
         {/* <Search /> */}
-        <Table lease={currentLease} />
+        <Table lease={this.state.currentLease} />
       </div>
     );
   }
