@@ -1,8 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Rental Payments
 
-In the project directory, you can run:
+rental payment app
 
 ### `npm start`
 
@@ -11,6 +11,21 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
+
+### Search
+
+the search function works by inputting a search number and clicking submit. This will take the input and fetch the lease information via the URL and the lease ID that was input into the search.
+
+### UI
+
+The current User Interface
+
+![Image of UI](public/rp2.png)
+
+### Future
+
+- Methods to calculate difference in Days, Day of the Week, Difference from start/end date to payment day of the week, calculate amount for rent.
+- Testing
 
 ### `npm test`
 
