@@ -24,7 +24,7 @@ class App extends Component {
       },
       () => this.fetchData()
     );
-    // this.addForm.reset();
+    this.addForm.reset();
   }
 
   // componentDidMount() {

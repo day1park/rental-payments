@@ -2,12 +2,13 @@ import React from "react";
 import "./table.css";
 
 const Table = ({ lease }) => {
-  const { start_date, end_date, frequency, rent } = lease;
+  const { id, start_date, end_date, frequency, rent, payment_day } = lease;
   return (
     <div className="Table-container">
       <table className="Table">
         <thead>
           <tr>
+            <th>Lease number</th>
             <th>From</th>
             <th>To</th>
             <th>Days</th>
@@ -16,10 +17,14 @@ const Table = ({ lease }) => {
         </thead>
         <tbody>
           <tr>
-            <td>{start_date}</td>
-            <td>{end_date}</td>
-            <td>{frequency}</td>
-            <td>${rent}</td>
+            <td>1{id}</td>
+            <td>2{start_date}</td>
+            <td>3{end_date}</td>
+            <td>3{frequency}</td>
+            <td>
+              3$
+              {rent}
+            </td>
           </tr>
         </tbody>
       </table>
