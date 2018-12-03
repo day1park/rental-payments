@@ -47,21 +47,24 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <form
-          ref={input => (this.addForm = input)}
-          className="form-inline"
-          onSubmit={e => {
-            this.idSearch(e);
-          }}
-        >
-          <label>ID:</label>
-          <input
-            ref={input => (this.idInput = input)}
-            type="text"
-            placeholder="input ID"
-          />
-          <button>submit</button>
-        </form>
+        <div className="Search-container">
+          <form
+            ref={input => (this.addForm = input)}
+            className="form-inline"
+            onSubmit={e => {
+              this.idSearch(e);
+            }}
+          >
+            <label>ID:</label>
+            <input
+              ref={input => (this.idInput = input)}
+              type="text"
+              placeholder="input ID"
+              className="input"
+            />
+            <button className="submit">submit</button>
+          </form>
+        </div>
         {/* <Search /> */}
         <Table lease={currentLease} />
       </div>
